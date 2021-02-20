@@ -1,17 +1,26 @@
 <template>
-  <div class="app bluetheme">
-    <div class="onlyShowContent">
-      <page-header></page-header> 
-      <div class="page-body">
-        <transition name="fade" mode="out-in">
-        	<router-view></router-view> 
-        </transition>
-      </div>
-    </div>
-  </div>
+  <el-container class="app bluetheme" >
+    <el-aside width="200px">
+		<menu></menu>
+	</el-aside>
+    <el-container>
+      <el-header>
+		  <page-header></page-header> 
+	  </el-header>
+      <el-main>
+		  <div class="page-body">
+		    <transition name="fade" mode="out-in">
+		    	<router-view></router-view> 
+		    </transition>
+		  </div>
+	  </el-main>
+      <el-footer>Footer</el-footer>
+    </el-container>
+  </el-container>
 </template>
 <script>
 import pageHeader from './common/pageHeader.vue'
+import menu  from './common/menu.vue'
 export default {
   name: 'App',
   data () {
@@ -35,7 +44,8 @@ export default {
      
   },
   components: {
-    pageHeader
+    pageHeader,
+	menu
   },
   methods: {
      

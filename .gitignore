@@ -1,0 +1,8 @@
+nbproject/
+logs/
+/node_modules/
+/dist/
+package-lock.json
+.idea/
+yarn-error.log
+yarn.lock

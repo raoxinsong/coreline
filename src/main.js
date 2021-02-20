@@ -12,23 +12,23 @@ import store from './vuex/store';
 //Vue.use(VueResource);
 Vue.use(VueRouter);
 //$.ajaxSettings.crossDomain = true;
-// import ElementUI from 'element-ui';
-// import 'element-ui/lib/theme-chalk/index.css';
-// import locale from 'element-ui/lib/locale/lang/en'
-// Vue.use(ElementUI,{ locale });
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import locale from 'element-ui/lib/locale/lang/en'
+Vue.use(ElementUI,{ locale });
 
  // import $ from 'webpack-zepto';
  // //注册
  // window.$ = $;
  
-import element from './element_ui.js'
-import 'element-ui/lib/theme-chalk/index.css'
+// import element from './element_ui.js'
+// import 'element-ui/lib/theme-chalk/index.css'
 
-import lang from 'element-ui/lib/locale/lang/en'
-import locale from 'element-ui/lib/locale'
-// 设置语言
-locale.use(lang)
-Vue.use(element)
+// import lang from 'element-ui/lib/locale/lang/en'
+// import locale from 'element-ui/lib/locale'
+// // 设置语言
+// locale.use(lang)
+// Vue.use(element)
  
 //Vue.prototype.$ELEMENT = {locale};
 import './assets/bluetheme.less'
