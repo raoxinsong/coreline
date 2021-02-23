@@ -1,6 +1,49 @@
 <template>
     <div class="homepage">
         <div id="container" style="height: 100%;" tabindex="0"></div> 
+		<div class="opreateBox">
+			<div class="report_search">
+			  <el-row>
+				 <div class="el-inputbox">
+					  <span class="span_width">运行状态</span>
+					  <el-select class="runwidth" v-model="form.selectVal" size='mini' @change="selectValFun" filterable clearable placeholder="请选择">
+						<el-option
+						  v-for="item in form.options"
+						  :key="item.value"
+						  :label="item.label"
+						  :value="item.value">
+						</el-option>
+					  </el-select>
+				  </div>
+				  <div class="el-inputbox">
+					  <span class="span_width">创建人</span>
+					  <el-select class="runwidth" v-model="form.userVal" size='mini' @change="selectValFun" filterable clearable placeholder="请选择">
+					    <el-option
+					  	v-for="item in form.userInfo"
+					  	:key="item.id"
+					  	:label="item.select_name"
+					  	:value="item.user_name">
+					    </el-option>
+					  </el-select>
+				  </div>
+				  <div class="el-inputbox">
+					  <span class="span_width">任务ID</span>
+					  <div class="el-input">
+						<el-input class="runwidth" v-model="form.task_id" size='mini' clearable placeholder="请输入任务ID" @change="selectValFun"></el-input>
+					  </div>
+				  </div>
+				  <div class="el-inputbox">
+					  <span class="span_width">任务名称</span>
+					  <div class="el-input">
+						<el-input class="runwidth" v-model="form.task_name" size='mini' clearable placeholder="请输入任务名称" @change="selectValFun"></el-input>
+					  </div>
+				  </div>
+				  <span class="span_width">
+				  	<el-button v-on:click="updateData" size='mini' type="primary" style="padding: 7px 15px;">查询</el-button>
+				  </span>
+			  </el-row>
+			</div>
+		</div>
     </div>
 </template>
 
@@ -17,7 +60,26 @@ export default {
     return {
       map:null,
 	  dialogstatus:false,
-	  curentWindow:null
+	  curentWindow:null,
+	  options: [{
+			value: '选项1',
+			label: '黄金糕'
+		  }, {
+			value: '选项2',
+			label: '双皮奶'
+		  }, {
+			value: '选项3',
+			label: '蚵仔煎'
+		  }, {
+			value: '选项4',
+			label: '龙须面'
+		  }, {
+			value: '选项5',
+			label: '北京烤鸭'
+	  }],
+	  mapForm:{
+		  area:''
+	  }
     }
   },
   created() {
